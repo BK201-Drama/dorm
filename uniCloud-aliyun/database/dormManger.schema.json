@@ -1,0 +1,69 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"name": {
+			"title": "姓名",
+			"bsonType": "string",
+			"description": "请输入姓名号",
+			"trim": "both"
+		},
+		"dormMangerID": {
+			"title": "楼管编号",
+			"bsonType": "string",
+			"description": "请输入学号",
+			"trim": "both"
+		},
+		"gender": {
+			"bsonType": "int",
+			"title": "性别",
+			"description": "用户性别：0 未知 1 男性 2 女性",
+			"defaultValue": 0,
+			"enum": [{
+				"text": "未知",
+				"value": 0
+			}, {
+				"text": "男",
+				"value": 1
+			}, {
+				"text": "女",
+				"value": 2
+			}]
+		},
+		"role": {
+			"bsonType": "array",
+			"title": "角色",
+			"description": "角色",
+			"enum": {
+				"collection": "uni-id-roles",
+				"field": "role_id as value, role_name as text"
+			},
+			"foreignKey": "uni-id-roles.role_id",
+			"permission": {
+				"write": false
+			}
+		},
+		"mobile": {
+			"bsonType": "string",
+			"title": "手机号码",
+			"description": "手机号码",
+			"pattern": "^\\+?[0-9-]{3,20}$",
+			"trim": "both"
+		},
+		"dormBuildingNo": {
+			"title": "管理的宿舍楼",
+			"bsonType": "string",
+			"description": "请输入宿舍楼",
+			"trim": "both"
+		}
+	}
+}

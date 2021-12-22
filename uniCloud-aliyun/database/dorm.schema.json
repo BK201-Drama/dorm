@@ -1,0 +1,54 @@
+{
+	"bsonType": "object",
+	"required": ["dormBuildingNo", "dormRoomNo"],
+	"permission": {
+		"read": "'dormManger' in auth.permission",
+		"create": false,
+		"update": "'dormManger' in auth.permission",
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"dormBuildingNo": {
+			"title": "宿舍楼号",
+			"bsonType": "string",
+			"description": "请输入宿舍楼",
+			"trim": "both"
+		},
+		"dormRoomNo": {
+			"title": "宿舍号",
+			"bsonType": "string",
+			"description": "请输入宿舍号",
+			"trim": "both"
+		},
+		"status": {
+			"bsonType": "int",
+			"description": "用户状态：0 正常 1 已满 2 闲置 3 维修",
+			"title": "用户状态",
+			"defaultValue": 0,
+			"enum": [{
+				"text": "正常",
+				"value": 0
+			}, {
+				"text": "已满",
+				"value": 1
+			}, {
+				"text": "闲置",
+				"value": 2
+			}, {
+				"text": "维修",
+				"value": 3
+			}]
+		},
+		"number": {
+			"bsonType": "int",
+			"title": "入住人数",
+			"defaultValue": "0",
+			"maximum": 4,
+			"minimum": 0,
+			"description": "每个宿舍入住的人数"
+		}
+	}
+}

@@ -1,0 +1,28 @@
+{
+    "pages": [
+        {
+            "path": "pages/uni-id-roles/add",
+            "style": {
+                "navigationBarTitleText": "新增"
+            }
+        },
+        {
+            "path": "pages/uni-id-roles/edit",
+            "style": {
+                "navigationBarTitleText": "编辑"
+            }
+        },
+        {
+            "path": "pages/uni-id-roles/list",
+            "style": {
+                "navigationBarTitleText": "列表"
+            }
+        },
+        {
+            "path": "pages/uni-id-roles/detail",
+            "style": {
+                "navigationBarTitleText": "详情"
+            }
+        }
+    ]
+}

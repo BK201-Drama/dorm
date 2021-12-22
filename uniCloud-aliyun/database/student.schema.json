@@ -1,0 +1,106 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": true,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"name": {
+			"title": "姓名",
+			"bsonType": "string",
+			"description": "请输入姓名号",
+			"trim": "both"
+		},
+		"studentID": {
+			"title": "学号",
+			"bsonType": "string",
+			"description": "请输入学号",
+			"trim": "both"
+		},
+		"dormBuildingNo": {
+			"title": "宿舍楼",
+			"bsonType": "string",
+			"description": "请输入宿舍楼",
+			"trim": "both"
+		},
+		"gender": {
+			"bsonType": "int",
+			"title": "性别",
+			"description": "用户性别：0 未知 1 男性 2 女性",
+			"defaultValue": 0,
+			"enum": [{
+				"text": "未知",
+				"value": 0
+			}, {
+				"text": "男",
+				"value": 1
+			}, {
+				"text": "女",
+				"value": 2
+			}]
+		},
+		"role": {
+			"bsonType": "array",
+			"title": "角色",
+			"description": "用户角色",
+			"enum": {
+				"collection": "uni-id-roles",
+				"field": "role_id as value, role_name as text"
+			},
+			"foreignKey": "uni-id-roles.role_id",
+			"permission": {
+				"write": true
+			}
+		},
+		"degree": {
+			"title": "年级",
+			"bsonType": "string",
+			"description": "请输入年级",
+			"trim": "both"
+		},
+		"dormRoomNo": {
+			"title": "宿号",
+			"bsonType": "string",
+			"description": "请输入宿号",
+			"trim": "both"
+		},
+		"status": {
+			"bsonType": "int",
+			"description": "用户状态：0 已入住 1 离校",
+			"title": "用户状态",
+			"defaultValue": 0,
+			"enum": [{
+				"text": "已入住",
+				"value": 0
+			}, {
+				"text": "离校",
+				"value": 1
+			}]
+		},
+		"applyStatus":{
+			"bsonType": "int",
+			"description": "用户状态：0审核中  1审核通过  2审核不通过  3无" ,
+			"title": "用户状态",
+			"defaultValue": 0,
+			"enum": [{
+				"text": "审核中",
+				"value": 0
+			}, {
+				"text": "审核通过",
+				"value": 1
+			}, {
+				"text": "审核不通过",
+				"value": 2
+			},{
+				"text": "无",
+				"value": 3
+			}]
+		}
+	}
+}
